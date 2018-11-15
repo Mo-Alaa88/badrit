@@ -1,14 +1,31 @@
-// For Top nav
+
+window.onscroll = function() {
+    myFunction()
+};
+const navbar = document.getElementById('navbar');
+const sticky = navbar.offsetTop;
+const img =document.getElementById('logo');
 function myFunction() {
-    const x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add('sticky', 'colored');
+        img.src = ('./image/logo-b.png');
+    }else{
+        navbar.classList.remove('sticky', 'colored');
+        img.src = ('./image/logo.png');
     }
 }
-const logo = document.getElementById('logo');
-const img = document.getElementsByClassName('img');
+
+// // For Top nav
+// function myFunction() {
+//     const x = document.getElementById("myTopnav");
+//     if (x.className === "topnav") {
+//         x.className += " responsive";
+//     } else {
+//         x.className = "topnav";
+//     }
+// }
+// const logo = document.getElementById('logo');
+// const img = document.getElementsByClassName('img');
 // const header = document.getElementById('navbar');
 // const header = document.getElementsByClassName('navbar');
 // logo.src ='./image/logo.png';
